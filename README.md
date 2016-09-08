@@ -32,7 +32,7 @@ The [RazerSDK](https://github.com/razerofficial/razer-sdk-docs) can be accessed 
 
 * Download and install [Corona Enterprise Daily Builds](http://developer.coronalabs.com/downloads/enterprise-daily-builds)
 
-* `Corona Enterprise` requires `ant` which requires installing [Homebrew](http://brew.sh/)
+* `Corona Enterprise` requires **ant** which requires installing [Homebrew](http://brew.sh/)
 
 * After installing `Homebrew`, update in the terminal
 
@@ -100,6 +100,8 @@ key.store=debug.keystore
 key.store.password=android
 key.alias.password=android
 ```
+
+* Run the [build_easy.sh](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/android/build_easy.sh) script to build, install, and run the `Corona` build on the connected `Android` device
 
 ## Razer SDK
 
