@@ -54,6 +54,12 @@ brew install ant
 /Applications/CoronaEnterprise/Corona/mac/bin/CoronaBuilder.app/Contents/MacOS/CoronaBuilder authorize your_email your_password
 ```
 
+* Update the Corona Enterprise SDK local.properties with the following terminal command:
+
+```
+android update project --target 1 --path /Applications/CoronaEnterprise/Corona/android/lib/Corona/
+```
+
 ## Examples 
 
 ### In-App-Purchase Example
@@ -98,6 +104,66 @@ key.alias.password=android
 ## Razer SDK
 
 The `RazerSDK` can be accessed using the [Corona RazerSDK Plugin](https://marketplace.coronalabs.com/plugin/razer-zone-store) which provides access to the `Lua API`.
+
+### Build.settings
+
+Edit the [build.settings](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/build.settings) to specify the `Razer` plugin.
+
+```
+settings =
+{
+	plugins =
+	{
+		["plugin.razerStore"] =
+		{
+			publisherId = "com.razerzone"
+		},
+	},
+}
+```
+
+The `Game` intent filter can be added through the `Android` intent settings.
+
+```
+settings =
+{
+    android =
+    {
+           mainIntentFilter =
+           {
+                   categories = { "com.razerzone.store.category.GAME" },
+           }
+	}
+}
+```
+
+The minimum SDK version can be added through the `Android` settings.
+
+```
+settings =
+{
+    android =
+    {
+           minSdkVersion = "21"
+	}
+}
+```
+
+The `Android TV` game setting can be added through the `Android` settings.
+
+```
+settings =
+{
+    android =
+    {
+           isGame = true
+	}
+}
+```
+
+### Icons
+
+* The `Android` [icon](https://docs.coronalabs.com/daily/guide/distribution/buildSettings/index.html#android) page specifies the icon naming convention. Content review requires that the `Icon-mdpi.png` at `48x48` must be used.
 
 ### Initialization
 
@@ -167,7 +233,6 @@ Plugin Lua `cancel` callbacks have no parameters when used by `RazerSDK` functio
 
         RazerSDK.InitPlugin(callbacksInitPlugin.onSuccess, callbacksInitPlugin.onFailure, secretApiKey);
     end
-end
 ```
 
 ### RequestGamerInfo
