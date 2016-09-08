@@ -117,8 +117,8 @@ settings =
 		["plugin.razerStore"] =
 		{
 			publisherId = "com.razerzone"
-		},
-	},
+		}
+	}
 }
 ```
 
@@ -206,6 +206,10 @@ Plugin Lua `cancel` callbacks have no parameters when used by `RazerSDK` functio
 
 ### InitPlugin
 
+See the [RazerSDK Documentation](https://github.com/razerofficial/razer-sdk-docs) for details on how to obtain the `Secret API Key`.
+
+The `InitPlugin` function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksInitPlugin.lua) for success and failure with a string parameter for the `SecretApiKey`. The success callback is invoked if the `RazerSDK` is initialized successfully. The failure callback is invoked if the `RazerSDK` fails to initialize. The success event is invoked after IAP has been initialized.
+
 ```
     callbacksInitPlugin = require "callbacksInitPlugin"
 
@@ -237,6 +241,8 @@ Plugin Lua `cancel` callbacks have no parameters when used by `RazerSDK` functio
 
 ### RequestGamerInfo
 
+`RequestGamerInfo` function receives the `GamerInfo` about the logged in user. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestGamerInfo.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized. The success callback is invoked if the operation completes successfully. The failure callback is invoked if the operation failed. The cancel callback is invoked if the operation was canceled. The success event receives the `JSON` data of the `GamerInfo`.
+
 ```
     callbacksRequestGamerInfo = require "callbacksRequestGamerInfo"
 
@@ -246,6 +252,8 @@ Plugin Lua `cancel` callbacks have no parameters when used by `RazerSDK` functio
 ```
 
 ### RequestProducts
+
+`RequestProducts` returns the product details given an `JSON` array of `identifiers`. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestProducts.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized. The `identifiers` can be `ENTITLEMENTS` and/or `CONSUMABLES`.
 
 ```
     callbacksRequestProducts = require "callbacksRequestProducts"
@@ -258,6 +266,8 @@ Plugin Lua `cancel` callbacks have no parameters when used by `RazerSDK` functio
 ```
 
 ### RequestPurchase
+
+`RequestPurchase` initiates a purchase for the logged in user given the `identifier` and `product type` of an `ENTITLEMENT` or `CONSUMABLE`. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestPurchase.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized. Entitlements and consumables need to correspond to the items that were created in the [developer portal](https://devs.ouya.tv).
 
 ```
     callbacksRequestPurchase = require "callbacksRequestPurchase"
@@ -279,6 +289,8 @@ Plugin Lua `cancel` callbacks have no parameters when used by `RazerSDK` functio
 
 ### RequestReceipts
 
+`RequestReceipts` returns all the `ENTITLEMENT` receipts for the logged in user. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestReceipts.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized.
+
 ```
     callbacksRequestReceipts = require "callbacksRequestReceipts"
 
@@ -288,6 +300,8 @@ Plugin Lua `cancel` callbacks have no parameters when used by `RazerSDK` functio
 ```
 
 ### Shutdown
+
+The `Shutdown` method should only be invoked after the `RazerSDK` has successfully initialized. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksShutdown.lua) for success, failure, and cancel events. The `RazerSDK` must be shutdown before exiting the application.
 
 ```
     callbacksShutdown = require "callbacksShutdown"
@@ -299,7 +313,7 @@ Plugin Lua `cancel` callbacks have no parameters when used by `RazerSDK` functio
 
 ### Quit
 
-This method should only be invoked after the `RazerSDK` has been shutdown if the `RazerSDK` had successfully initialized. The `RazerSDK.Quit` method will finish the plugin activity. The `native.requestExit` method will cause `Corona` to exit the application. 
+The `Quit` method should only be invoked after the `RazerSDK` has been shutdown if the `RazerSDK` had successfully initialized. The `RazerSDK.Quit` method will finish the plugin activity. The `native.requestExit` method will cause `Corona` to exit the application. 
 
 ```
     if (RazerSDK ~= nil) then
