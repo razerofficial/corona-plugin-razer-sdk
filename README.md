@@ -4,9 +4,9 @@ The [RazerSDK](https://github.com/razerofficial/razer-sdk-docs) can be accessed 
 
 ### Forums
 
-[Forge TV on Razer Forums](https://insider.razerzone.com/index.php?forums/razer-forge-tv.126/)
+* [Forge TV on Razer Forums](https://insider.razerzone.com/index.php?forums/razer-forge-tv.126/)
 
-[Corona on CoronaLabs Forums](http://forums.coronalabs.com/forum/627-ouya/)
+* [Corona on CoronaLabs Forums](http://forums.coronalabs.com/forum/627-ouya/)
 
 ## Resources
 
@@ -25,6 +25,8 @@ The [RazerSDK](https://github.com/razerofficial/razer-sdk-docs) can be accessed 
 * Download and install [CoronaSDK](https://developer.coronalabs.com/downloads/coronasdk)
 
 * Download and install [JDK7 (32-bit)](https://docs.coronalabs.com/daily/guide/start/installWin/index.html) which is required on Windows in order to handle the keystore properly for Android building
+
+* Activate the [Razer Corona Plugin](https://marketplace.coronalabs.com/plugin/razer-zone-store) on your `Corona` account
 
 ### Corona Enterprise
 
@@ -91,4 +93,39 @@ key.alias=androiddebugkey
 key.store=debug.keystore
 key.store.password=android
 key.alias.password=android
+```
+
+## Razer SDK
+
+The `RazerSDK` can be accessed using the [Corona RazerSDK Plugin](https://marketplace.coronalabs.com/plugin/razer-zone-store) which provides access to the `Lua API`.
+
+### OnFailure
+
+All `OnFailure` callbacks return an `int errorCode` and `string errorMessage` when used by `RazerSDK` function calls.
+
+### OnCancel
+
+All `OnCancel` callbacks have no parameters when used by `RazerSDK` function calls.
+
+### InitPlugin
+
+### RequestGamerInfo
+
+### RequestProducts
+
+### RequestPurchase
+
+### RequestReceipts
+
+### Shutdown
+
+### Quit
+
+This method should only be invoked after the `RazerSDK` has been shutdown if the `RazerSDK` had successfully initialized. The `RazerSDK.Quit` method will finish the plugin activity. The `native.requestExit` method will cause `Corona` to exit the application. 
+
+```
+    if (RazerSDK ~= nil) then
+        RazerSDK.Quit();
+    end
+    native.requestExit();
 ```
