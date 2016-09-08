@@ -99,25 +99,138 @@ key.alias.password=android
 
 The `RazerSDK` can be accessed using the [Corona RazerSDK Plugin](https://marketplace.coronalabs.com/plugin/razer-zone-store) which provides access to the `Lua API`.
 
+### Initialization
+
+* Before invoking `RazerSDK` functions, the Corona plugin needs to be loaded. The `Corona` plugin should not be loaded in the simulator environment.
+
+```
+if (system.getInfo("environment") ~= "simulator") then
+    print "Loading plugin.razerStore...";
+    local plugin_razer_store = require( "plugin.razerStore" )
+end
+```
+
+* Check that the plugin activity is ready before invoking the initialization methods.
+
+```
+local function mainStart( event )
+    print( "mainStart called" )
+
+    if nil ~= RazerSDK then
+        local isReady = RazerSDK.ActivityIsReady();
+        if (isReady == false) then
+            -- wait for activity to be ready
+            timer.performWithDelay(100, mainStart);
+            return;
+        else
+            -- ready to initialize the Corona plugin
+        end
+
+    end
+end
+```
+
 ### OnFailure
 
-All `OnFailure` callbacks return an `int errorCode` and `string errorMessage` when used by `RazerSDK` function calls.
+Plugin Lua `failure` callbacks return an `errorCode` number and `errorMessage` string when used by `RazerSDK` function calls.
 
 ### OnCancel
 
-All `OnCancel` callbacks have no parameters when used by `RazerSDK` function calls.
+Plugin Lua `cancel` callbacks have no parameters when used by `RazerSDK` function calls.
 
 ### InitPlugin
 
+```
+    callbacksInitPlugin = require "callbacksInitPlugin"
+
+    if (RazerSDK ~= nil) then
+        local secretApiKey = "eyJkZXZlbG9wZXJfaWQi";
+        secretApiKey = secretApiKey .. "OiIzMTBhOGY1MS00ZDZl";
+        secretApiKey = secretApiKey .. "LTRhZTUtYmRhMC1iOTM4";
+        secretApiKey = secretApiKey .. "NzhlNWY1ZDAiLCJkZXZl";
+        secretApiKey = secretApiKey .. "bG9wZXJfcHVibGljX2tl";
+        secretApiKey = secretApiKey .. "eSI6Ik1JR2ZNQTBHQ1Nx";
+        secretApiKey = secretApiKey .. "R1NJYjNEUUVCQVFVQUE0";
+        secretApiKey = secretApiKey .. "R05BRENCaVFLQmdRQ3Va";
+        secretApiKey = secretApiKey .. "VWJYQkdVWUxsaVlYRmRG";
+        secretApiKey = secretApiKey .. "T0k0bXIvK2RhMTdWL2pN";
+        secretApiKey = secretApiKey .. "TXZxTkQ1ZWJpb2pXU0Rt";
+        secretApiKey = secretApiKey .. "ZEZud255anVSUGZTVzY4";
+        secretApiKey = secretApiKey .. "ZkUrN0QvdElPOWlsdm8w";
+        secretApiKey = secretApiKey .. "MXc0aEVNeDhpUXVyRDBP";
+        secretApiKey = secretApiKey .. "bTFNMDlENHRUTE5MdGp2";
+        secretApiKey = secretApiKey .. "dW1zMm82ZWQ1eGlSVFJS";
+        secretApiKey = secretApiKey .. "TG8zVFJTNWFFMlJQczdj";
+        secretApiKey = secretApiKey .. "VjBZblJjek1iU3V1TG5U";
+        secretApiKey = secretApiKey .. "bVlVMGMzMFlhOSt3MjNn";
+        secretApiKey = secretApiKey .. "OVBiUUlEQVFBQiJ9";
+
+        RazerSDK.InitPlugin(callbacksInitPlugin.onSuccess, callbacksInitPlugin.onFailure, secretApiKey);
+    end
+end
+```
+
 ### RequestGamerInfo
+
+```
+    callbacksRequestGamerInfo = require "callbacksRequestGamerInfo"
+
+    if (RazerSDK ~= nil) then
+        RazerSDK.RequestGamerInfo(callbacksRequestGamerInfo.onSuccess, callbacksRequestGamerInfo.onFailure, callbacksRequestGamerInfo.onCancel);
+    end
+```
 
 ### RequestProducts
 
+```
+    callbacksRequestProducts = require "callbacksRequestProducts"
+
+    if (RazerSDK ~= nil) then
+        local products =  { "long_sword", "sharp_axe", "cool_level", "awesome_sauce", "__DECLINED__THIS_PURCHASE" };
+        local jsonData = json.encode(products);
+        RazerSDK.RequestProducts(callbacksRequestProducts.onSuccess, callbacksRequestProducts.onFailure, callbacksRequestProducts.onCancel, jsonData);
+    end
+```
+
 ### RequestPurchase
+
+```
+    callbacksRequestPurchase = require "callbacksRequestPurchase"
+
+    local identifier = "long_sword";
+
+    -- purchase an entitlement    
+    if (RazerSDK ~= nil) then
+        local productType = "ENTITLEMENT";
+        RazerSDK.RequestPurchase(callbacksRequestPurchase.onSuccess, callbacksRequestPurchase.onFailure, callbacksRequestPurchase.onCancel, identifier, productType);
+    end
+
+    -- purchase an consumable    
+    if (RazerSDK ~= nil) then
+        local productType = "CONSUMABLE";
+        RazerSDK.RequestPurchase(callbacksRequestPurchase.onSuccess, callbacksRequestPurchase.onFailure, callbacksRequestPurchase.onCancel, identifier, productType);
+    end
+```
 
 ### RequestReceipts
 
+```
+    callbacksRequestReceipts = require "callbacksRequestReceipts"
+
+    if (RazerSDK ~= nil) then
+        RazerSDK.RequestReceipts(callbacksRequestReceipts.onSuccess, callbacksRequestReceipts.onFailure, callbacksRequestReceipts.onCancel);
+    end
+```
+
 ### Shutdown
+
+```
+    callbacksShutdown = require "callbacksShutdown"
+
+    if (RazerSDK ~= nil) then
+        RazerSDK.Shutdown(callbacksShutdown.onSuccess, callbacksShutdown.onFailure);
+    end
+```
 
 ### Quit
 

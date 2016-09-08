@@ -20,9 +20,6 @@
 
 print "Start of main.lua";
 
-local library = require("CoronaLibrary")
-local plugin_razer_sdk = library:new{ name = "plugin.razerStore", publisherId = "com.razerzone" }
-
 -- print (system.getInfo("environment"));
 if (system.getInfo("environment") ~= "simulator") then
     print "Loading plugin.razerStore...";
