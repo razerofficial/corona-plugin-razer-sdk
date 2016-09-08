@@ -1,0 +1,26 @@
+Compiled from "CallbacksRequestReceipts.java"
+public class com.razerzone.store.sdk.engine.corona.CallbacksRequestReceipts {
+  public com.razerzone.store.sdk.engine.corona.CallbacksRequestReceipts(com.naef.jnlua.LuaState);
+    Signature: (Lcom/naef/jnlua/LuaState;)V
+
+  public void onSuccess(java.lang.String);
+    Signature: (Ljava/lang/String;)V
+
+  public void onFailure(int, java.lang.String);
+    Signature: (ILjava/lang/String;)V
+
+  public void onCancel();
+    Signature: ()V
+
+  static int access$000(com.razerzone.store.sdk.engine.corona.CallbacksRequestReceipts);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestReceipts;)I
+
+  static com.ansca.corona.CoronaRuntimeTaskDispatcher access$100(com.razerzone.store.sdk.engine.corona.CallbacksRequestReceipts);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestReceipts;)Lcom/ansca/corona/CoronaRuntimeTaskDispatcher;
+
+  static int access$200(com.razerzone.store.sdk.engine.corona.CallbacksRequestReceipts);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestReceipts;)I
+
+  static int access$300(com.razerzone.store.sdk.engine.corona.CallbacksRequestReceipts);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestReceipts;)I
+}

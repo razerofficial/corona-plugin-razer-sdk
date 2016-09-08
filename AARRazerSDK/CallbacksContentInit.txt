@@ -1,0 +1,17 @@
+Compiled from "CallbacksContentInit.java"
+public class com.razerzone.store.sdk.engine.corona.CallbacksContentInit {
+  public com.razerzone.store.sdk.engine.corona.CallbacksContentInit();
+    Signature: ()V
+
+  public void CallbacksContentInitOnInitialized();
+    Signature: ()V
+
+  public void CallbacksContentInitOnDestroyed();
+    Signature: ()V
+
+  public void onInitialized();
+    Signature: ()V
+
+  public void onDestroyed();
+    Signature: ()V
+}

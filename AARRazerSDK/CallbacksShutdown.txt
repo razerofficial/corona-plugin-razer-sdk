@@ -1,0 +1,20 @@
+Compiled from "CallbacksShutdown.java"
+public class com.razerzone.store.sdk.engine.corona.CallbacksShutdown {
+  public com.razerzone.store.sdk.engine.corona.CallbacksShutdown(com.naef.jnlua.LuaState);
+    Signature: (Lcom/naef/jnlua/LuaState;)V
+
+  public void onSuccess();
+    Signature: ()V
+
+  public void onFailure(int, java.lang.String);
+    Signature: (ILjava/lang/String;)V
+
+  static int access$000(com.razerzone.store.sdk.engine.corona.CallbacksShutdown);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksShutdown;)I
+
+  static com.ansca.corona.CoronaRuntimeTaskDispatcher access$100(com.razerzone.store.sdk.engine.corona.CallbacksShutdown);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksShutdown;)Lcom/ansca/corona/CoronaRuntimeTaskDispatcher;
+
+  static int access$200(com.razerzone.store.sdk.engine.corona.CallbacksShutdown);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksShutdown;)I
+}

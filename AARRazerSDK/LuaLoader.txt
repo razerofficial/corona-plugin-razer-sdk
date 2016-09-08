@@ -1,0 +1,11 @@
+Compiled from "LuaLoader.java"
+public class plugin.razerStore.LuaLoader implements com.naef.jnlua.JavaFunction {
+  public plugin.razerStore.LuaLoader();
+    Signature: ()V
+
+  public int invoke(com.naef.jnlua.LuaState);
+    Signature: (Lcom/naef/jnlua/LuaState;)I
+
+  static {};
+    Signature: ()V
+}

@@ -1,0 +1,22 @@
+Compiled from "CallbacksInitPlugin.java"
+public class com.razerzone.store.sdk.engine.corona.CallbacksInitPlugin {
+  public java.lang.String mSecretApiKey;
+    Signature: Ljava/lang/String;
+  public com.razerzone.store.sdk.engine.corona.CallbacksInitPlugin(com.naef.jnlua.LuaState);
+    Signature: (Lcom/naef/jnlua/LuaState;)V
+
+  public void onSuccess();
+    Signature: ()V
+
+  public void onFailure(int, java.lang.String);
+    Signature: (ILjava/lang/String;)V
+
+  static int access$000(com.razerzone.store.sdk.engine.corona.CallbacksInitPlugin);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksInitPlugin;)I
+
+  static com.ansca.corona.CoronaRuntimeTaskDispatcher access$100(com.razerzone.store.sdk.engine.corona.CallbacksInitPlugin);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksInitPlugin;)Lcom/ansca/corona/CoronaRuntimeTaskDispatcher;
+
+  static int access$200(com.razerzone.store.sdk.engine.corona.CallbacksInitPlugin);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksInitPlugin;)I
+}

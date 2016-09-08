@@ -1,0 +1,16 @@
+Compiled from "PluginActivity.java"
+public class com.razerzone.store.sdk.engine.corona.PluginActivity extends android.app.Activity {
+  public static final java.lang.String TAG;
+    Signature: Ljava/lang/String;
+  public com.razerzone.store.sdk.engine.corona.PluginActivity();
+    Signature: ()V
+
+  protected void onCreate(android.os.Bundle);
+    Signature: (Landroid/os/Bundle;)V
+
+  protected void onActivityResult(int, int, android.content.Intent);
+    Signature: (IILandroid/content/Intent;)V
+
+  static {};
+    Signature: ()V
+}

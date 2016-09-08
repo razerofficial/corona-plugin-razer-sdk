@@ -1,0 +1,203 @@
+Compiled from "Plugin.java"
+public class com.razerzone.store.sdk.engine.corona.Plugin {
+  public com.razerzone.store.sdk.engine.corona.Plugin();
+    Signature: ()V
+
+  public static android.app.Activity getActivity();
+    Signature: ()Landroid/app/Activity;
+
+  public static void setActivity(android.app.Activity);
+    Signature: (Landroid/app/Activity;)V
+
+  public static android.os.Bundle getSavedInstanceState();
+    Signature: ()Landroid/os/Bundle;
+
+  public static void setSavedInstanceState(android.os.Bundle);
+    Signature: (Landroid/os/Bundle;)V
+
+  public static com.razerzone.store.sdk.engine.corona.StoreFacadeWrapper getStoreFacadeWrapper();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/StoreFacadeWrapper;
+
+  public static void setStoreFacadeWrapper(com.razerzone.store.sdk.engine.corona.StoreFacadeWrapper);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/StoreFacadeWrapper;)V
+
+  public static com.razerzone.store.sdk.content.GameModManager getGameModManager();
+    Signature: ()Lcom/razerzone/store/sdk/content/GameModManager;
+
+  public static void setGameModManager(com.razerzone.store.sdk.content.GameModManager);
+    Signature: (Lcom/razerzone/store/sdk/content/GameModManager;)V
+
+  public static java.util.List<com.razerzone.store.sdk.content.GameMod> getGameModManagerInstalledResults();
+    Signature: ()Ljava/util/List;
+
+  public static void setGameModManagerInstalledResults(java.util.List<com.razerzone.store.sdk.content.GameMod>);
+    Signature: (Ljava/util/List;)V
+
+  public static java.util.List<com.razerzone.store.sdk.content.GameMod> getGameModManagerPublishedResults();
+    Signature: ()Ljava/util/List;
+
+  public static void setGameModManagerPublishedResults(java.util.List<com.razerzone.store.sdk.content.GameMod>);
+    Signature: (Ljava/util/List;)V
+
+  public static java.util.List<com.razerzone.store.sdk.content.GameMod> getOuyaContentInstalledResults();
+    Signature: ()Ljava/util/List;
+
+  public static void setOuyaContentInstalledResults(java.util.List<com.razerzone.store.sdk.content.GameMod>);
+    Signature: (Ljava/util/List;)V
+
+  public static java.util.List<com.razerzone.store.sdk.content.GameMod> getOuyaContentPublishedResults();
+    Signature: ()Ljava/util/List;
+
+  public static void setOuyaContentPublishedResults(java.util.List<com.razerzone.store.sdk.content.GameMod>);
+    Signature: (Ljava/util/List;)V
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksInitPlugin getCallbacksInitPlugin();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksInitPlugin;
+
+  public static void setCallbacksInitPlugin(com.razerzone.store.sdk.engine.corona.CallbacksInitPlugin);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksInitPlugin;)V
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksInitInput getCallbacksInitInput();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksInitInput;
+
+  public static void setCallbacksInitInput(com.razerzone.store.sdk.engine.corona.CallbacksInitInput);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksInitInput;)V
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksRequestGamerInfo getCallbacksRequestGamerInfo();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestGamerInfo;
+
+  public static void setCallbacksRequestGamerInfo(com.razerzone.store.sdk.engine.corona.CallbacksRequestGamerInfo);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestGamerInfo;)V
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksRequestProducts getCallbacksRequestProducts();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestProducts;
+
+  public static void setCallbacksRequestProducts(com.razerzone.store.sdk.engine.corona.CallbacksRequestProducts);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestProducts;)V
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksRequestPurchase getCallbacksRequestPurchase();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestPurchase;
+
+  public static void setCallbacksRequestPurchase(com.razerzone.store.sdk.engine.corona.CallbacksRequestPurchase);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestPurchase;)V
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksRequestReceipts getCallbacksRequestReceipts();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestReceipts;
+
+  public static void setCallbacksRequestReceipts(com.razerzone.store.sdk.engine.corona.CallbacksRequestReceipts);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksRequestReceipts;)V
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksShutdown getCallbacksShutdown();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksShutdown;
+
+  public static void setCallbacksShutdown(com.razerzone.store.sdk.engine.corona.CallbacksShutdown);
+    Signature: (Lcom/razerzone/store/sdk/engine/corona/CallbacksShutdown;)V
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksContentInit getCallbacksContentInit();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksContentInit;
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksContentSearchInstalled getCallbacksContentSearchInstalled();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksContentSearchInstalled;
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksContentSearchPublished getCallbacksContentSearchPublished();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksContentSearchPublished;
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksContentSave getCallbacksContentSave();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksContentSave;
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksContentPublish getCallbacksContentPublish();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksContentPublish;
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksContentUnpublish getCallbacksContentUnpublish();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksContentUnpublish;
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksContentDelete getCallbacksContentDelete();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksContentDelete;
+
+  public static com.razerzone.store.sdk.engine.corona.CallbacksContentDownload getCallbacksContentDownload();
+    Signature: ()Lcom/razerzone/store/sdk/engine/corona/CallbacksContentDownload;
+
+  public static void initPlugin(java.lang.String);
+    Signature: (Ljava/lang/String;)V
+
+  public static boolean processOnActivityResult(int, int, android.content.Intent);
+    Signature: (IILandroid/content/Intent;)Z
+
+  public static void requestGamerInfo();
+    Signature: ()V
+
+  public static void requestProducts(java.lang.String[]);
+    Signature: ([Ljava/lang/String;)V
+
+  public static void requestPurchase(java.lang.String, java.lang.String);
+    Signature: (Ljava/lang/String;Ljava/lang/String;)V
+
+  public static void requestReceipts();
+    Signature: ()V
+
+  public static void updateSafeArea(float);
+    Signature: (F)V
+
+  public static void shutdown();
+    Signature: ()V
+
+  public static void saveGameaMod(com.razerzone.store.sdk.content.GameMod$Editor, com.razerzone.store.sdk.content.GameMod);
+    Signature: (Lcom/razerzone/store/sdk/content/GameMod$Editor;Lcom/razerzone/store/sdk/content/GameMod;)V
+
+  public static void getOuyaContentInstalled();
+    Signature: ()V
+
+  public static com.razerzone.store.sdk.content.GameMod[] getOuyaContentInstalledResultsArray();
+    Signature: ()[Lcom/razerzone/store/sdk/content/GameMod;
+
+  public static void getOuyaContentPublished(java.lang.String);
+    Signature: (Ljava/lang/String;)V
+
+  public static com.razerzone.store.sdk.content.GameMod[] getOuyaContentPublishedResultsArray();
+    Signature: ()[Lcom/razerzone/store/sdk/content/GameMod;
+
+  public static void contentDelete(com.razerzone.store.sdk.content.GameMod);
+    Signature: (Lcom/razerzone/store/sdk/content/GameMod;)V
+
+  public static void contentPublish(com.razerzone.store.sdk.content.GameMod);
+    Signature: (Lcom/razerzone/store/sdk/content/GameMod;)V
+
+  public static void contentUnpublish(com.razerzone.store.sdk.content.GameMod);
+    Signature: (Lcom/razerzone/store/sdk/content/GameMod;)V
+
+  public static void contentDownload(com.razerzone.store.sdk.content.GameMod);
+    Signature: (Lcom/razerzone/store/sdk/content/GameMod;)V
+
+  public static float getFloat(java.lang.Float);
+    Signature: (Ljava/lang/Float;)F
+
+  public static android.graphics.Bitmap[] getBitmapArray(java.util.List<android.graphics.Bitmap>);
+    Signature: (Ljava/util/List;)[Landroid/graphics/Bitmap;
+
+  public static com.razerzone.store.sdk.content.GameModScreenshot[] getOuyaModScreenshotArray(java.util.List<com.razerzone.store.sdk.content.GameModScreenshot>);
+    Signature: (Ljava/util/List;)[Lcom/razerzone/store/sdk/content/GameModScreenshot;
+
+  public static java.lang.String[] getStringArray(java.util.List<java.lang.String>);
+    Signature: (Ljava/util/List;)[Ljava/lang/String;
+
+  public static void quit();
+    Signature: ()V
+
+  public static java.lang.String getStringResource(java.lang.String);
+    Signature: (Ljava/lang/String;)Ljava/lang/String;
+
+  public static java.lang.String getDeviceHardwareName();
+    Signature: ()Ljava/lang/String;
+
+  static int access$000();
+    Signature: ()I
+
+  static int access$100();
+    Signature: ()I
+
+  static java.lang.String access$200();
+    Signature: ()Ljava/lang/String;
+
+  static {};
+    Signature: ()V
+}

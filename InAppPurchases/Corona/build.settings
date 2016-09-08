@@ -1,0 +1,29 @@
+settings =
+{
+	orientation = {
+		default = "landscapeRight", 
+		supported = { "landscapeRight", },
+	},
+
+	plugins =
+	{
+		["plugin.razerStore"] =
+		{
+			publisherId = "com.razerzone"
+		},
+	},
+
+    android =
+    {
+           mainIntentFilter =
+           {
+                   categories = { "com.razerzone.store.category.GAME" },
+           },
+           isGame = true,
+           minSdkVersion = "21",
+           plist =
+           {
+                   "Icon-mdpi.png"
+           }
+	}
+}
