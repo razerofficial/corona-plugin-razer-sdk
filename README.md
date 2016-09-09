@@ -20,11 +20,13 @@ The [RazerSDK](https://github.com/razerofficial/razer-sdk-docs) can be accessed 
 
 ## Quick Start
 
+* Download and install [Android Studio](https://developer.android.com/studio/index.html) which has a nice `Lua` intellisense plugin 
+
 ### Corona Simulator
 
 * Download and install [CoronaSDK](https://developer.coronalabs.com/downloads/coronasdk)
 
-* Download and install [JDK7 (32-bit)](https://docs.coronalabs.com/daily/guide/start/installWin/index.html) which is required on Windows in order to handle the keystore properly for Android building
+* Download and install [JRE7 (32-bit)](http://www.oracle.com/technetwork/java/javase/archive-139210.html) which is required on Windows in order to handle the keystore properly for Android building [details](https://docs.coronalabs.com/daily/guide/start/installWin/index.html)
 
 * Activate the [Razer Corona Plugin](https://marketplace.coronalabs.com/plugin/razer-zone-store) on your `Corona` account
 
@@ -76,7 +78,7 @@ The [InAppPurchases](https://github.com/razerofficial/corona-plugin-razer-sdk/tr
 
 * Use the `File->Build->Android` menu item and enter `com.razerzone.store.sdk.engine.corona.examples.inapppurchases` for the sample package name.
 
-* The `debug.keystore` password is `android` which should be accepted if JDK7 (32-bit) is installed
+* The `debug.keystore` password is `android` which should be accepted if `JRE7 (32-bit)` is installed
 
 * Click `Build` in order to create the Corona Android `APK`
 
