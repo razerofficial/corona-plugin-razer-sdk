@@ -28,7 +28,7 @@ The [RazerSDK](https://github.com/razerofficial/razer-sdk-docs) can be accessed 
 
 * Download and install [JRE7 (32-bit)](http://www.oracle.com/technetwork/java/javase/archive-139210.html) which is required on Windows in order to handle the keystore properly for Android building [details](https://docs.coronalabs.com/daily/guide/start/installWin/index.html)
 
-* Activate the [Razer Corona Plugin](https://marketplace.coronalabs.com/plugin/razer-zone-store) on your `Corona` account
+* Activate the [Razer Corona Plugin](https://marketplace.coronalabs.com/plugin/razer-store) on your `Corona` account
 
 ### Corona Enterprise
 
@@ -107,7 +107,7 @@ key.alias.password=android
 
 ## Razer SDK
 
-The `RazerSDK` can be accessed using the [Corona RazerSDK Plugin](https://marketplace.coronalabs.com/plugin/razer-zone-store) which provides access to the `Lua API`.
+The `RazerSDK` can be accessed using the [Corona RazerSDK Plugin](https://marketplace.coronalabs.com/plugin/razer-store) which provides access to the `Lua API`.
 
 ### Build.settings
 
