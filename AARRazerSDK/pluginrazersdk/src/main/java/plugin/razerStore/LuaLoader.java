@@ -16,6 +16,7 @@ import com.razerzone.store.sdk.engine.corona.LuaInitInput;
 import com.razerzone.store.sdk.engine.corona.LuaInitPlugin;
 import com.razerzone.store.sdk.engine.corona.LuaQuit;
 import com.razerzone.store.sdk.engine.corona.LuaRequestGamerInfo;
+import com.razerzone.store.sdk.engine.corona.LuaRequestLogin;
 import com.razerzone.store.sdk.engine.corona.LuaRequestProducts;
 import com.razerzone.store.sdk.engine.corona.LuaRequestPurchase;
 import com.razerzone.store.sdk.engine.corona.LuaRequestReceipts;
@@ -95,6 +96,7 @@ public class LuaLoader implements JavaFunction {
                 new LuaGetStringResource(),
                 new LuaInitInput(),
                 new LuaInitPlugin(),
+                new LuaRequestLogin(),
                 new LuaRequestGamerInfo(),
                 new LuaRequestProducts(),
                 new LuaRequestPurchase(),

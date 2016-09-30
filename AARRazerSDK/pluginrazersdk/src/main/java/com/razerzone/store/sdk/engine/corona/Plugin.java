@@ -51,6 +51,7 @@ public class Plugin
 	private static List<GameMod> sOuyaContentPublishedResults = null;
 	private static CallbacksInitPlugin sCallbacksInitPlugin = null;
 	private static CallbacksInitInput sCallbacksInitInput = null;
+	private static CallbacksRequestLogin sCallbacksRequestLogin = null;
 	private static CallbacksRequestGamerInfo sCallbacksRequestGamerInfo = null;
 	private static CallbacksRequestProducts sCallbacksRequestProducts = null;
 	private static CallbacksRequestPurchase sCallbacksRequestPurchase = null;
@@ -94,6 +95,9 @@ public class Plugin
 
 	public static CallbacksInitInput getCallbacksInitInput() { return sCallbacksInitInput; }
 	public static void setCallbacksInitInput(CallbacksInitInput callback) { sCallbacksInitInput = callback; }
+
+    public static CallbacksRequestLogin getCallbacksRequestLogin() { return sCallbacksRequestLogin; }
+    public static void setCallbacksRequestLogin(CallbacksRequestLogin callback) { sCallbacksRequestLogin = callback; }
 
 	public static CallbacksRequestGamerInfo getCallbacksRequestGamerInfo() { return sCallbacksRequestGamerInfo; }
 	public static void setCallbacksRequestGamerInfo(CallbacksRequestGamerInfo callback) { sCallbacksRequestGamerInfo = callback; }
@@ -197,6 +201,30 @@ public class Plugin
             Log.d(TAG, "onActivityResult: END");
         }
         return false;
+    }
+
+    public static void requestLogin()
+    {
+        try
+        {
+            if (sEnableLogging) {
+                Log.d(TAG, "requestLogin");
+            }
+
+            StoreFacadeWrapper storeFacadeWrapper = Plugin.getStoreFacadeWrapper();
+            if (null == storeFacadeWrapper)
+            {
+                Log.e(TAG, "requestLogin: storeFacadeWrapper is null!");
+                return;
+            }
+
+            storeFacadeWrapper.requestLogin();
+        }
+        catch (Exception e)
+        {
+            Log.e(TAG, "requestLogin exception");
+            e.printStackTrace();
+        }
     }
 
 	public static void requestGamerInfo()

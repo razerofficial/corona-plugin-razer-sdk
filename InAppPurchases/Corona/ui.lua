@@ -20,6 +20,7 @@
 
 globals = require "globals"
 helpers = require "helpers"
+callbacksRequestLogin = require "callbacksRequestLogin"
 callbacksRequestGamerInfo = require "callbacksRequestGamerInfo"
 callbacksRequestProducts = require "callbacksRequestProducts"
 callbacksRequestPurchase = require "callbacksRequestPurchase"
@@ -66,6 +67,17 @@ ui.setButtonFocus = function (btnNext)
         helpers.spriteFadeIn(globals.focusButton.spriteActive);
     end
 
+end
+
+ui.doRequestLogin = function ()
+    if nil == RazerSDK then
+        ui.txtStatus.text = globals.NOT_AVAILABLE;
+        -- create test data
+        callbacksRequestLogin.onSuccess();
+    else
+        ui.txtStatus.text = "Requesting Login...";
+        RazerSDK.RequestLogin(callbacksRequestLogin.onSuccess, callbacksRequestLogin.onFailure, callbacksRequestLogin.onCancel);
+    end
 end
 
 ui.doRequestGamerInfo = function ()
@@ -151,7 +163,9 @@ ui.onObjectTouch = function (event)
         local button = ui.getButton(event.target.id);
         ui.setButtonFocus(button);
 
-        if (event.target.id == "RequestGamerInfo") then
+        if (event.target.id == "RequestLogin") then
+            ui.doRequestLogin();
+        elseif (event.target.id == "RequestGamerInfo") then
             ui.doRequestGamerInfo();
         elseif (event.target.id == "RequestProducts") then
             ui.doRequestProducts();
@@ -176,7 +190,10 @@ ui.init = function ()
     ui.txtGamerUsername = display.newText("Gamer Username: (unknown)", display.contentCenterX - 300, 240, "Helvetica", 24);
     ui.txtGamerUUID = display.newText("Gamer UUID: (unknown)", display.contentCenterX - 300, 270, "Helvetica", 24);
 
-    local x = display.contentCenterX - 600;
+    local x = display.contentCenterX - 700;
+    ui.btnLogin = helpers.createButton(x, 400, 1.5, 0.5, "RequestLogin", "Login", 0, 0, 24);
+
+    x = x + 250;
     ui.btnProducts = helpers.createButton(x, 400, 1.5, 0.5, "RequestProducts", "Get Products", 0, 0, 24);
 
     x = x + 250;
