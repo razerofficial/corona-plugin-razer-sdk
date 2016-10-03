@@ -243,9 +243,21 @@ The `InitPlugin` function takes [callbacks](https://github.com/razerofficial/cor
     end
 ```
 
+### RequestLogin
+
+`RequestLogin` function opens the login dialog to sign in the user. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestLogin.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized. The success callback is invoked if the operation completes successfully. The failure callback is invoked if the operation failed. The cancel callback is invoked if the operation was canceled. The success event indicates the user was successfully logged in or the user was already logged in. The failure event indicates there was a problem logging in. The cancel event indicates the user canceled signing in.
+
+```
+    callbacksRequestLogin = require "callbacksRequestLogin"
+
+    if (RazerSDK ~= nil) then
+        RazerSDK.RequestLogin(callbacksRequestLogin.onSuccess, callbacksRequestLogin.onFailure, callbacksRequestLogin.onCancel);
+    end
+```
+
 ### RequestGamerInfo
 
-`RequestGamerInfo` function receives the `GamerInfo` about the logged in user. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestGamerInfo.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized. The success callback is invoked if the operation completes successfully. The failure callback is invoked if the operation failed. The cancel callback is invoked if the operation was canceled. The success event receives the `JSON` data of the `GamerInfo`.
+`RequestGamerInfo` function receives the `GamerInfo` about the logged in user. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestGamerInfo.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized. The success callback is invoked if the operation completes successfully. The failure callback is invoked if the operation failed. The cancel callback is invoked if the operation was canceled. The success event receives the `JSON` data of the `GamerInfo`. The failure event will be invoked if the user is not logged in.
 
 ```
     callbacksRequestGamerInfo = require "callbacksRequestGamerInfo"
@@ -271,7 +283,7 @@ The `InitPlugin` function takes [callbacks](https://github.com/razerofficial/cor
 
 ### RequestPurchase
 
-`RequestPurchase` initiates a purchase for the logged in user given the `identifier` and `product type` of an `ENTITLEMENT` or `CONSUMABLE`. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestPurchase.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized. Entitlements and consumables need to correspond to the items that were created in the [developer portal](https://devs.ouya.tv).
+`RequestPurchase` initiates a purchase for the logged in user given the `identifier` and `product type` of an `ENTITLEMENT` or `CONSUMABLE`. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestPurchase.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized. Entitlements and consumables need to correspond to the items that were created in the [developer portal](https://devs.ouya.tv). The failure event will be invoked if the user is not logged in.
 
 ```
     callbacksRequestPurchase = require "callbacksRequestPurchase"
@@ -293,7 +305,7 @@ The `InitPlugin` function takes [callbacks](https://github.com/razerofficial/cor
 
 ### RequestReceipts
 
-`RequestReceipts` returns all the `ENTITLEMENT` receipts for the logged in user. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestReceipts.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized.
+`RequestReceipts` returns all the `ENTITLEMENT` receipts for the logged in user. The function takes [callbacks](https://github.com/razerofficial/corona-plugin-razer-sdk/blob/master/InAppPurchases/Corona/callbacksRequestReceipts.lua) for success, failure, and cancel events. This method should only be invoked after the `RazerSDK` has successfully initialized. The failure event will be invoked if the user is not logged in.
 
 ```
     callbacksRequestReceipts = require "callbacksRequestReceipts"
